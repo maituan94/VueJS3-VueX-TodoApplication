@@ -1,0 +1,79 @@
+:root {
+    --primary-color: #CCD5AE;
+    --secondary-color: #FEFAE0;
+    --grey: #cccccc;
+    --cream-color: #FAEDCD;
+    --light-blue: #e9ecef;
+}
+
+.bg-primary {
+    background-color: var(--primary-color) !important;
+}
+
+.btn-primary {
+    font-weight: bold;
+    color: black;
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-primary:hover, .btn-primary:focus{
+    color: black;
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    opacity: 0.6;
+    transition: ease-in-out 0.2s;
+    outline: none;
+    box-shadow: none;
+}
+
+.btn-outline-secondary {
+    font-weight: bold;
+    color: black;
+    border-color: var(--secondary-color);
+}
+
+.btn-outline-secondary:hover, .btn-outline-secondary:focus {
+    color: black;
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+    outline: none;
+    box-shadow: none;
+}
+
+.btn-secondary {
+    color: black;
+    background-color: var(--secondary-color);
+    border-color: var(--grey);
+}
+
+.btn-secondary:hover{
+    color: black;
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+    opacity: 0.6;
+    transition: ease-in-out 0.2s;
+    outline: none;
+    box-shadow: none;
+}
+
+.btn.btn-secondary.dropdown-toggle::after {
+    display: none;
+  }
+  .btn-secondary.dropdown-toggle {
+    background-color: var(--cream-color);
+    color: black;
+    border-color: var(--grey);
+    opacity: 0.5;
+  }
+  .dropdown-menu {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  .dropdown-menu .dropdown-item{
+    cursor: pointer;
+  }
+  .dropdown-menu .dropdown-item:active {
+    background-color: var(--light-blue);
+    color: black;
+  }
