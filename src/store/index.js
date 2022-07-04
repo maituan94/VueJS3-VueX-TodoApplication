@@ -18,11 +18,10 @@ export default createStore({
     ],
     toaster: {
       show: false,
-      text: 'There is no message for you',
+      text: '',
     },
     search: null,
     appTitle: 'Todo Application',
-    sorting: false,
   },
   getters: {
     tasksFiltered(state) {

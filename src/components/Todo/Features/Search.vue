@@ -1,7 +1,6 @@
 <template>
   <form class="d-flex">
     <input
-    v-model="value"
       class="form-control me-2"
       type="search"
       placeholder="Search Todo"
@@ -13,13 +12,11 @@
 <script>
 export default {
   name: "tools-search",
-  data: () => ({
-    value: ''
-  }),
   methods: {
-    onSearch() {
-        this.$store.commit('setSearch', this.value)
-    }
-  }
+    onSearch(e) {
+      const value = e.target.value;
+      this.$store.commit("setSearch", value);
+    },
+  },
 };
 </script>
