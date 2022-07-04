@@ -1,8 +1,6 @@
 <template>
   <div class="input-group mb-3">
     <input
-      v-model="newTaskTitle"
-      @keyup.enter="addTask"
       type="text"
       class="form-control"
       placeholder="No more tasks, please!"
@@ -13,7 +11,6 @@
       class="btn btn-secondary"
       type="button"
       id="button-addon2"
-      @click="addTask"
     >
       Add
     </button>
@@ -22,16 +19,6 @@
 
 <script>
 export default {
-  data() {
-    return {
-      newTaskTitle: "",
-    };
-  },
-  methods: {
-    addTask() {
-      this.$store.dispatch("addTask", this.newTaskTitle);
-      this.newTaskTitle = "";
-    },
-  },
+  
 };
 </script>

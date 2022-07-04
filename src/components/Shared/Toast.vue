@@ -3,13 +3,12 @@
   ">
     <div
       class="toast align-items-center "
-      :class="$store.state.toaster.show ? 'show': 'hide'"
       role="alert"
       aria-live="assertive"
       aria-atomic="true"
     >
       <div class="d-flex">
-        <div class="toast-body">{{$store.state.toaster.text}}</div>
+        <div class="toast-body">Display Message when actions are completed</div>
         <button
           type="button"
           class="btn-close me-2 m-auto"

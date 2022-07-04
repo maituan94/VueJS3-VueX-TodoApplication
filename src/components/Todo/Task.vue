@@ -1,24 +1,19 @@
 <template>
   <div class="input-group mb-3">
-    <div @click="doneTask(task.id)" class="input-group-text">
+    <div class="input-group-text">
       <input
         class="form-check-input mt-0"
         type="checkbox"
-        :checked="task.done"
         aria-label="Checkbox for following text input"
       />
     </div>
     <input
       type="text"
-      :disabled="!isEnableEdit"
       class="form-control"
       aria-label="Text input with checkbox"
-      :value="task.title"
-      @keyup.enter="changeTitle"
-      @blur="changeTitle"
     />
     <span v-if="task.dueDate" class="input-group-text">{{
-      formatDate(task.dueDate)
+      task.dueDate
     }}</span>
     <div class="dropdown">
       <button
@@ -50,45 +45,10 @@
 </template>
 
 <script>
-import moment from "moment";
-import Delete from "./Features/Delete.vue";
-import ModalDelete from "./modal/ModalDelete.vue";
-import DueDate from "./Features/DueDate.vue";
-import DatePicker from "./modal/DatePicker.vue";
 
 export default {
   name: "todo-task",
   props: ["task"],
-  data: () =>({
-    isEnableEdit: false
-  }),
-  methods: {
-    doneTask(id) {
-      this.$store.dispatch("doneTask", id);
-    },
-    formatDate(value) {
-      return moment(value).format("MMM DD");
-    },
-    editTitle() {
-      this.isEnableEdit = true
-    },
-    changeTitle(e) {
-      e.preventDefault();
-      const value = e.target.value;
-      const payload = {
-        id: this.task.id,
-        title: value
-      }
-      this.$store.dispatch('updateTaskTitle', payload)
-      this.isEnableEdit = false
-    }
-  },
-  components: {
-    "delete-button": Delete,
-    "modal-delete": ModalDelete,
-    "due-date": DueDate,
-    "date-picker": DatePicker,
-  },
 };
 </script>
 

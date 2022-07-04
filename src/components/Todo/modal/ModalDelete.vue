@@ -28,7 +28,6 @@
             No
           </button>
           <button
-            @click="$store.dispatch('deleteTask', task.id)"
             type="button"
             class="btn btn-primary"
             data-bs-dismiss="modal"
